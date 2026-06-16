@@ -1,0 +1,30 @@
+# OS/161 generated kernel build directories
+compile/*
+!compile/.gitkeep
+
+# Compiler/build outputs
+*.o
+*.a
+*.so
+*.d
+kernel
+kernel-*
+vers.c
+version
+files.mk
+autoconf.c
+autoconf.h
+opt-*.h
+
+# System/161 runtime artifacts
+*.img
+SWAPFILE
+sys161.conf
+
+# Editor and OS noise
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.vscode/
+.idea/

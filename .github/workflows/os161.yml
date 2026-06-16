@@ -1,0 +1,25 @@
+name: OS/161 kernel
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build-and-boot:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Pull OS/161 Docker image
+        run: docker pull marcopalena/polito-os161:latest
+
+      - name: Build PAGING kernel and boot smoke test
+        run: |
+          docker run --rm \
+            -v "$GITHUB_WORKSPACE:/work/kern:ro" \
+            -e KERN_SRC=/work/kern \
+            -e CONF=PAGING \
+            marcopalena/polito-os161:latest \
+            bash /work/kern/scripts/os161-ci.sh
