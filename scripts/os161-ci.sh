@@ -29,6 +29,7 @@ find "${OS161_SRC}/kern" -mindepth 1 -maxdepth 1 -exec rm -rf {} +
 
 tar -C "${OS161_SRC}/kern" -xf /tmp/os161-kern.tar
 
+mkdir -p "${OS161_SRC}/kern/compile"
 chmod +x "${OS161_SRC}/kern/conf/config" "${OS161_SRC}/kern/conf/newvers.sh"
 
 cd "${OS161_SRC}/kern/conf"
