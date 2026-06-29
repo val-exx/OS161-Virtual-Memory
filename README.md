@@ -18,6 +18,21 @@ The project goal was to improve OS/161 virtual memory management by implementing
 - read-only text segments through the TLB dirty bit;
 - VM statistics for TLB faults, page faults, reloads, invalidations, and swap writes.
 
+## Technologies and Skills Highlighted
+
+This project combines low-level operating system development with a reproducible modern build workflow:
+
+- **C programming**: kernel-level implementation using manual memory management, explicit data structures, and low-level error handling.
+- **OS/161**: instructional operating system used to implement and test core OS concepts in a realistic kernel environment.
+- **System/161**: MIPS machine simulator used to boot and validate the OS/161 kernel.
+- **MIPS architecture concepts**: TLB handling, virtual-to-physical address translation, page faults, and kernel/user memory separation.
+- **Virtual memory design**: demand paging, lazy loading from ELF executables, page replacement, swap management, and read-only code pages.
+- **Kernel data structures**: per-process page tables, physical coremap, swap table, and VM statistics counters.
+- **Docker**: containerized OS/161 toolchain and simulator environment for reproducible builds across machines.
+- **GitHub Actions**: CI workflow that builds the `PAGING` kernel and performs a System/161 boot smoke test on every push or pull request.
+- **Git/GitHub**: repository cleanup, generated artifact exclusion, documented project structure, and CI-based validation.
+- **Build tooling**: OS/161 `conf/config`, `bmake`, cross-compilation workflow, and scripted automation through Bash.
+
 ## Repository Layout
 
 This repository contains the `src/kern` subtree of OS/161, not a full OS/161 checkout.
